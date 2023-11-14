@@ -274,7 +274,7 @@ const Contact = () => {
               </label>
             </div>
 
-            <div className="relative mt-14">
+            <div className="relative mt-9">
               <input
                 type="text"
                 id="email"
@@ -291,7 +291,7 @@ const Contact = () => {
               </label>
             </div>
 
-            <div className="relative mt-14">
+            <div className="relative mt-9">
               <textarea
                 id="message"
                 className="block w-full h-auto min-h-[10rem] max-h-[20rem] sm:h-14 py-2 px-4 text-xl sm:text-2xl font-mono outline-none border-2 border-purple bg-transparent rounded-[0.6rem] transition-all duration-200 focus:bg-gray-dark-5  active:bg-gray-dark-5"

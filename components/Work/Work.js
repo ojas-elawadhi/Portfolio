@@ -166,7 +166,7 @@ const Work = ({ clientWidth }) => {
           </div>
         </div>
 
-        {clientWidth > 767 ? (
+        {false ? (
           <>
             <div className={`wrapper seq ${isActive ? "active" : ""}`}>
               <div className="page overflow-hidden" ref={companyCard}>
@@ -282,14 +282,14 @@ const Work = ({ clientWidth }) => {
           <>
             <div className="flex flex-col items-center">
               <div className="flex seq">
-                <div className="py-5">
+                <div className="flex py-5 gap-5">
                   {WORK.map((job, index) => {
                     const { company } = job;
                     return (
                       <div key={company}>
                         <Button
                           key={company}
-                          classes={`text-lg mb-4 ${
+                          classes={`text-lg mb-4 z-50 ${
                             index === activeIndex && "primary__button__active"
                           }`}
                           href={`#${company.toLowerCase()}`}
@@ -308,7 +308,7 @@ const Work = ({ clientWidth }) => {
               </div>
               <div className="pt-10 col-span-12 flex flex-col justify-center items-center min-h-full seq">
                 <Fade spy={reveal} right distance="4rem">
-                  <div className="bg-gray-dark-4 rounded-2xl px-10 py-10 w-72 h-full mx-16">
+                  <div className="bg-gray-dark-4 rounded-2xl px-10 py-10 w-80 h-full mx-16">
                     <p className="font-bold mb-2 text-2xl">
                       {WORK[activeIndex]?.company}
                     </p>
