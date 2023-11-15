@@ -61,7 +61,7 @@ const Skills = () => {
               {SKILLS.languagesAndTools.map((skill) => (
                 <Image
                   key={skill}
-                  src={`/skills/${skill}.svg`}
+                  src={`/images/${skill}.svg`}
                   alt={skill}
                   width={50}
                   height={50}
@@ -77,7 +77,7 @@ const Skills = () => {
               {SKILLS.librariesAndFrameworks.map((skill) => (
                 <Image
                   key={skill}
-                  src={`/skills/${skill}.svg`}
+                  src={`/images/${skill}.svg`}
                   alt={skill}
                   width={50}
                   height={50}
