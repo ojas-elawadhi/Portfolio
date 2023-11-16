@@ -16,6 +16,7 @@ const Work = ({ clientWidth }) => {
   const [mockupStyle, setMockupStyle] = useState({});
   const [macTopStyle, setMacTopStyle] = useState({});
   const [activeIndex, setActiveIndex] = useState(0);
+  const [activeYear, setActiveYear] = useState(0);
   const [reveal, setReveal] = useState(0);
   const targetSection = useRef(null);
   const inputRef = useRef(null);
@@ -296,6 +297,7 @@ const Work = ({ clientWidth }) => {
                           type="primary"
                           onClick={() => {
                             setActiveIndex(index);
+                            setActiveYear(0);
                             setReveal((prev) => prev + 1);
                           }}
                         >
@@ -306,20 +308,43 @@ const Work = ({ clientWidth }) => {
                   })}
                 </div>
               </div>
-              <div className="pt-10 col-span-12 flex flex-col justify-center items-center min-h-full seq">
+              <div className="pt-0 col-span-12 flex flex-col justify-center items-center min-h-full seq">
                 <Fade spy={reveal} right distance="4rem">
-                  <div className="bg-gray-dark-4 rounded-2xl px-10 py-10 w-80 h-full mx-16">
+                  <div className="flex py-5 gap-5">
+                    {WORK[activeIndex]?.years[0].year &&
+                      WORK[activeIndex]?.years?.map((yearData, yearIndex) => {
+                        return (
+                          <div key={yearIndex}>
+                            <Button
+                              key={`${yearIndex}`}
+                              classes={`text-md mb-4 z-50 py-2 px-5 ${
+                                yearIndex === activeYear &&
+                                "primary__button__active"
+                              }`}
+                              type="primary"
+                              onClick={() => {
+                                setActiveYear(yearIndex);
+                                setReveal((prev) => prev + 1);
+                              }}
+                            >
+                              {yearData.year}
+                            </Button>
+                          </div>
+                        );
+                      })}
+                  </div>
+                  <div className="bg-gray-dark-4 rounded-2xl px-10 py-10 w-80 lg:w-[420px] h-full mx-16">
                     <p className="font-bold mb-2 text-2xl">
                       {WORK[activeIndex]?.company}
                     </p>
                     <p className="mb-1 text-lg">{WORK[activeIndex]?.title}</p>
                     <p className="italic text-sm font-thin">
-                      {/* {company?.startDate} -{" "}
-                        {company?.endDate ? company?.endDate : "Present"} */}
-                      {WORK[activeIndex]?.range}
+                      {WORK[activeIndex]?.years[activeYear]?.range}
                     </p>
                     <ul className="text-base mt-6 list-disc ml-2 z-30">
-                      {WORK[activeIndex]?.responsibilities.map((r) => (
+                      {WORK[activeIndex]?.years[
+                        activeYear
+                      ]?.responsibilities.map((r) => (
                         <li key={r} className="mt-2">
                           {r}
                         </li>

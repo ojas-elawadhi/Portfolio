@@ -68,7 +68,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    console.log(process.env.NEXT_PUBLIC_USER_ID,"env")
     const { name, email, message } = {
       name: formData.name,
       email: formData.email,

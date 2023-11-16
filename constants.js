@@ -161,13 +161,32 @@ export const WORK = [
     company: "Crypto Owl",
     title: "Frontend Developer Intern",
     location: "Remote",
-    range: "July-Jan 2023 • Aug-Oct 2023",
-    responsibilities: [
-      "Led creation of a captivating cross-platform e-commerce solution.",
-      "Enhanced UX with gamification and personalized push notifications ensuring an ever-improving shopping journey.",
-      "The app boasts a DAU base of 13k and an extensive MAU count of 170k.",
+    years: [
+      {
+        year: "2022",
+        range: "July 2022 - Jan 2023",
+        responsibilities: [
+          "Created many responsive and reusable components.",
+          "Implemented a feature-rich React Table component, enabling searching, sorting, and tooltips for enhanced functionality.",
+          "Used Recharts library to make charts like line chart, bar chart, pie chart and area chart",
+          "Integrated API’s in the Front-endand created custom hooks for fetching data using swr hooks",
+          "Tech Stack: React, TailwindCSS, Typescript",
+        ],
+      },
+      {
+        year: "2023",
+        range: "Aug 2023 - Oct 2023",
+        responsibilities: [
+          "Designed responsive, visually pleasing UI for optimal user experience and engagement",
+          "Enhanced web app visuals with Recharts library for dynamic data representation.",
+          "Optimized data flow using Redux-Toolkit for efficient state management",
+          "Integrated APIs seamlessly for enhanced functionality and real-time data interaction",
+          "Tech Stack: Next, Chakra UI, React, TailwindCSS, Redux, Typescript",
+        ],
+      },
     ],
-    url: "https://mydukaan.io/",
+
+    url: "",
     video: "/work/dukaan.mp4",
   },
   {
@@ -175,11 +194,17 @@ export const WORK = [
     company: "Coding Ninjas",
     title: "Teaching Assistant (Competitive Programming)",
     location: "Remote",
-    range: "Feb - June 2022",
-    responsibilities: [
-      "Resolved 269 doubts of Students",
-      "Average Rating- 4.62/5",
-      "Solved doubts on Topics like Recursion, Backtracking, Dynamic Programming, Graphs etc.",
+
+    years: [
+      {
+        year: null,
+        range: "Feb - June 2022",
+        responsibilities: [
+          "Resolved 269 doubts of Students",
+          "Average Rating- 4.62/5",
+          "Solved doubts on Topics like Recursion, Backtracking, Dynamic Programming, Graphs etc.",
+        ],
+      },
     ],
     url: "https://www.codingninjas.com/",
     video: "/work/aviate.mp4",
@@ -189,11 +214,16 @@ export const WORK = [
     company: "Real Dev Squad",
     title: "Open Source Developer",
     location: "Remote",
-    range: "Dec 2021 - July 2022",
-    responsibilities: [
-      "Fixed and Enhanced UI and its functioning on Dashboard site using HTML,CSS, JavaScript",
-      "Created a route to generate chaincode using Node.js.",
-      "Created a firestore model for chaincode collection and returned document ID as chaincode in response",
+    years: [
+      {
+        year: null,
+        range: "Dec 2021 - July 2022",
+        responsibilities: [
+          "Fixed and Enhanced UI and its functioning on Dashboard site using HTML,CSS, JavaScript",
+          "Created a route to generate chaincode using Node.js.",
+          "Created a firestore model for chaincode collection and returned document ID as chaincode in response",
+        ],
+      },
     ],
     url: "https://spacenos.com/",
     video: "/work/spacenos.mp4",
