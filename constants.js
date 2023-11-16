@@ -3,8 +3,8 @@ export const METADATA = {
   title: "Portfolio | Ojas Elawadhi",
   description:
     "Ojas Elawadhi is a Frontend Developer from Kuwait, interested in crafting beautiful and functional applications.",
-  siteUrl: "https://www.shubhporwal.me/",
-  twitterHandle: "@shubh731",
+  siteUrl: "https://ojas-elawadhi.vercel.app/",
+  twitterHandle: "@Ojas_elawadhi",
   keywords: [
     "Ojas Elawadhi",
     "Frontend Developer",
@@ -106,16 +106,6 @@ export const SKILLS = {
 };
 
 export const PROJECTS = [
-  // {
-  //   name: "Shotime",
-  //   image: "",
-  //   blurImage: "",
-  //   description:
-  //     "Developed with complete E-commerce functionality and User Authentication 🛍️",
-  //   gradient: ["#FFCF1B", "#FF881B"],
-  //   url: "https://shubh73-shotime.vercel.app/",
-  //   tech: ["react", "tailwindcss", "redux", "mongodb", "stripe"],
-  // },
   {
     name: "NetflixGPT",
     image: "/projects/Netflix.webp",
@@ -143,16 +133,7 @@ export const PROJECTS = [
     gradient: ["#000066", "#6699FF"],
     url: "https://qrcodegeneratr.netlify.app/",
     tech: ["react", "html", "css"],
-  },
-  // {
-  //   name: "Tesla",
-  //   image: "/projects/tesla.webp",
-  //   blurImage: "/projects/blur/tesla-blur.webp",
-  //   description: "A Tesla React Native App 🏎️",
-  //   gradient: ["#142D46", "#2E4964"],
-  //   url: "https://github.com/shubh73/tesla",
-  //   tech: ["react"],
-  // },
+  },,
 ];
 
 export const WORK = [
