@@ -129,7 +129,7 @@ export const PROJECTS = [
     name: "QR Code Generator",
     image: "/projects/QrGenerator.webp",
     blurImage: "/projects/blur/airbnb-blur.webp",
-    description: "Generates downlaodable QR-code of any link",
+    description: "Generates downloadable QR-code of any link 📷",
     gradient: ["#000066", "#6699FF"],
     url: "https://qrcodegeneratr.netlify.app/",
     tech: ["react", "html", "css"],
