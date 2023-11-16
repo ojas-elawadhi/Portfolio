@@ -290,7 +290,7 @@ const Work = ({ clientWidth }) => {
                       <div key={company}>
                         <Button
                           key={company}
-                          classes={`text-lg mb-4 z-50 ${
+                          classes={`text-lg mb-4 z-40 ${
                             index === activeIndex && "primary__button__active"
                           }`}
                           href={`#${company.toLowerCase()}`}
@@ -317,7 +317,7 @@ const Work = ({ clientWidth }) => {
                           <div key={yearIndex}>
                             <Button
                               key={`${yearIndex}`}
-                              classes={`text-md mb-4 z-50 py-2 px-5 ${
+                              classes={`text-md mb-4 z-40 py-2 px-5 ${
                                 yearIndex === activeYear &&
                                 "primary__button__active"
                               }`}
