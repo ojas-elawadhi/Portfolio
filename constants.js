@@ -150,7 +150,7 @@ export const WORK = [
           "Created many responsive and reusable components.",
           "Implemented a feature-rich React Table component, enabling searching, sorting, and tooltips for enhanced functionality.",
           "Used Recharts library to make charts like line chart, bar chart, pie chart and area chart",
-          "Integrated API’s in the Front-endand created custom hooks for fetching data using swr hooks",
+          "Integrated API’s in the Front-end and created custom hooks for fetching data using swr hook",
           "Tech Stack: React, TailwindCSS, Typescript",
         ],
       },
