@@ -2,7 +2,7 @@ export const METADATA = {
   author: "Ojas Elawadhi",
   title: "Portfolio | Ojas Elawadhi",
   description:
-    "Ojas Elawadhi is a Frontend Developer from Kuwait, interested in crafting beautiful and functional applications.",
+    "Ojas Elawadhi is a Frontend Developer from India, interested in crafting beautiful and functional applications.",
   siteUrl: "https://ojas-elawadhi.vercel.app/",
   twitterHandle: "@Ojas_elawadhi",
   keywords: [
