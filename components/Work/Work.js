@@ -337,7 +337,9 @@ const Work = ({ clientWidth }) => {
                     <p className="font-bold mb-2 text-2xl">
                       {WORK[activeIndex]?.company}
                     </p>
-                    <p className="mb-1 text-lg">{WORK[activeIndex]?.title}</p>
+                    <p className="mb-1 text-lg">
+                      {WORK[activeIndex]?.years[activeYear]?.title}
+                    </p>
                     <p className="italic text-sm font-thin">
                       {WORK[activeIndex]?.years[activeYear]?.range}
                     </p>

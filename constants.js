@@ -133,19 +133,20 @@ export const PROJECTS = [
     gradient: ["#000066", "#6699FF"],
     url: "https://qrcodegeneratr.netlify.app/",
     tech: ["react", "html", "css"],
-  },,
+  },
+  ,
 ];
 
 export const WORK = [
   {
     id: 1,
     company: "Crypto Owl",
-    title: "Frontend Developer Intern",
     location: "Remote",
     years: [
       {
         year: "2022",
-        range: "July 2022 - Jan 2023",
+        range: "July 2022 - Dec 2023",
+        title: "Frontend Developer Intern",
         responsibilities: [
           "Created many responsive and reusable components.",
           "Implemented a feature-rich React Table component, enabling searching, sorting, and tooltips for enhanced functionality.",
@@ -156,13 +157,14 @@ export const WORK = [
       },
       {
         year: "2023",
-        range: "Aug 2023 - Oct 2023",
+        range: "Jul 2023 - Present",
+        title: "Frontend Developer",
         responsibilities: [
           "Designed responsive, visually pleasing UI for optimal user experience and engagement",
           "Enhanced web app visuals with Recharts library for dynamic data representation.",
           "Optimized data flow using Redux-Toolkit for efficient state management",
           "Integrated APIs seamlessly for enhanced functionality and real-time data interaction",
-          "Tech Stack: Next, Chakra UI, React, TailwindCSS, Redux, Typescript",
+          "Tech Stack: Next, Chakra UI, React, React-Native, TailwindCSS, Redux, Typescript",
         ],
       },
     ],
@@ -173,13 +175,14 @@ export const WORK = [
   {
     id: 2,
     company: "Coding Ninjas",
-    title: "Teaching Assistant (Competitive Programming)",
     location: "Remote",
 
     years: [
       {
         year: null,
         range: "Feb - June 2022",
+        title: "Teaching Assistant (Competitive Programming)",
+
         responsibilities: [
           "Resolved 269 doubts of Students",
           "Average Rating- 4.62/5",
@@ -193,12 +196,13 @@ export const WORK = [
   {
     id: 3,
     company: "Real Dev Squad",
-    title: "Open Source Developer",
     location: "Remote",
     years: [
       {
         year: null,
         range: "Dec 2021 - July 2022",
+        title: "Open Source Developer",
+
         responsibilities: [
           "Fixed and Enhanced UI and its functioning on Dashboard site using HTML,CSS, JavaScript",
           "Created a route to generate chaincode using Node.js.",
