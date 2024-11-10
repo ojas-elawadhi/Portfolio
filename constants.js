@@ -113,7 +113,7 @@ export const PROJECTS = [
     description:
       "Netflix clone using React, Tailwind CSS, Firebase & GPT API 🍿",
     gradient: ["#F14658", "#DC2537"],
-    url: "https://netflix-app-gpt.netlify.app/",
+    url: "https://netflis-gpt.netlify.app/",
     tech: ["react", "tailwindcss", "firebase"],
   },
   {
@@ -140,7 +140,7 @@ export const PROJECTS = [
 export const WORK = [
   {
     id: 1,
-    company: "Crypto Owl",
+    company: " Owl Byte Solutions",
     location: "Remote",
     years: [
       {
