@@ -39,7 +39,7 @@ const Footer = () => {
       className="w-full relative select-none bg-cover"
       ref={targetSection}
     >
-      <FooterBg />
+      {/* <FooterBg /> */}
       <Fade bottom distance={"4rem"}>
         <div className="w-full h-full pt-32">
           <div className="section-container flex flex-col h-full justify-end z-10 items-center py-12">

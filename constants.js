@@ -107,6 +107,15 @@ export const SKILLS = {
 
 export const PROJECTS = [
   {
+    name: "Mockify",
+    image: "/projects/MockifyScreen.webp",
+    blurImage: "/projects/blur/airbnb-blur.webp",
+    description: "AI Mock Interview with personalized feedback ",
+    gradient: ["#006600", "#fff"],
+    url: "https://mockify-beta.vercel.app/",
+    tech: ["Nextjs", "tailwindcss", "Gemini"],
+  },
+  {
     name: "NetflixGPT",
     image: "/projects/Netflix.webp",
     blurImage: "/projects/blur/airbnb-blur.webp",
@@ -160,11 +169,11 @@ export const WORK = [
         range: "Jul 2023 - Present",
         title: "Frontend Developer",
         responsibilities: [
-          "Designed responsive, visually pleasing UI for optimal user experience and engagement",
-          "Enhanced web app visuals with Recharts library for dynamic data representation.",
-          "Optimized data flow using Redux-Toolkit for efficient state management",
-          "Integrated APIs seamlessly for enhanced functionality and real-time data interaction",
-          "Tech Stack: Next, Chakra UI, React, React-Native, TailwindCSS, Redux, Typescript",
+          "Built responsive web and mobile apps with React, React Native, Next.js, and TypeScript",
+          "Developed a web extension and mobile app for tweet analysis and token tracking",
+          "Used Redux Toolkit and integrated REST APIs for real-time data",
+          "Designed sleek interfaces with Chakra-UI, TailwindCSS, and Recharts",
+          "Connected wallets and tracked tokens using wagmi and TradingView",
         ],
       },
     ],
@@ -210,7 +219,7 @@ export const WORK = [
         ],
       },
     ],
-    url: "https://spacenos.com/",
+    url: "https://realdevsquad.com/",
     video: "/work/spacenos.mp4",
   },
 ];
