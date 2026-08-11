@@ -4,9 +4,10 @@
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
-  "name": "Portfolio | Ojas Elawadhi",
-  "short_name": "Ojas Elawadhi",
-  "description": "Ojas Elawadhi's Portfolio Website.",
+  "id": "/",
+  "name": "Ojas Elawadhi | Software Developer",
+  "short_name": "Ojas",
+  "description": "Ojas Elawadhi's software developer portfolio.",
   "icons": [
     {
       "src": "/icon-192x192.png",

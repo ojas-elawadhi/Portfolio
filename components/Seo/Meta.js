@@ -1,56 +1,81 @@
 import Head from "next/head";
 import { METADATA } from "../../constants";
 
-const Meta = ({ children }) => {
+const Meta = ({
+  children,
+  title = METADATA.title,
+  description = METADATA.description,
+  noIndex = false,
+}) => {
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: METADATA.author,
+    url: METADATA.siteUrl,
+    image: METADATA.image,
+    jobTitle: "Software Developer",
+    sameAs: METADATA.socialProfiles,
+    knowsAbout: [
+      "Software Development",
+      "React",
+      "Next.js",
+      "React Native",
+      "TypeScript",
+    ],
+  };
+
   return (
     <>
       <Head>
-        <title>{METADATA.title}</title>
-        <meta name="description" content={METADATA.description} />
+        <title>{title}</title>
+        <meta name="description" content={description} />
         <meta name="keywords" content={METADATA.keywords} />
-        <meta name="robots" content="index,follow" />
-        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta
+          name="robots"
+          content={noIndex ? "noindex,nofollow" : "index,follow"}
+        />
+        <meta
+          name="googlebot"
+          content={noIndex ? "noindex,nofollow" : "index,follow"}
+        />
         <meta name="language" content={METADATA.language} />
         <meta name="author" content={METADATA.author} />
-        <meta httpEquiv="content-language" content="en" />
+        <meta name="application-name" content={METADATA.author} />
+        <meta name="apple-mobile-web-app-title" content={METADATA.author} />
+        {!noIndex && <link rel="canonical" href={METADATA.siteUrl} />}
 
         {/* Open Graph / Facebook */}
-        <meta property="og:locale" content="en_US" />
+        <meta property="og:locale" content={METADATA.locale} />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content={METADATA.title} />
-        <meta property="og:description" content={METADATA.description} />
-        {/* <meta property="og:image" content={METADATA.image} /> */}
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={METADATA.image} />
+        <meta property="og:image:secure_url" content={METADATA.image} />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1917" />
+        <meta property="og:image:height" content="865" />
+        <meta property="og:image:alt" content={METADATA.imageAlt} />
         <meta property="og:url" content={METADATA.siteUrl} />
-        <meta property="og:site_name" content={METADATA.title} />
+        <meta property="og:site_name" content={METADATA.author} />
 
         {/* Twitter */}
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:title" content={METADATA.title} />
-        <meta property="twitter:description" content={METADATA.description} />
-        <meta property="twitter:site" content={METADATA.twitterHandle} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:site" content={METADATA.twitterHandle} />
         <meta name="twitter:creator" content={METADATA.twitterHandle} />
-        <meta property="twitter:url" content={METADATA.siteUrl} />
-        {/* <meta property="twitter:image" content={METADATA.image} /> */}
+        <meta name="twitter:url" content={METADATA.siteUrl} />
+        <meta name="twitter:image" content={METADATA.image} />
+        <meta name="twitter:image:alt" content={METADATA.imageAlt} />
 
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/favicons/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicons/favicon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicons/favicon.png"
-        />
-        <meta name="msapplication-TileColor" content="#7000FF" />
-        <link rel="manifest" href="/site.webmanifest" />
+        {!noIndex && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(personSchema).replace(/</g, "\\u003c"),
+            }}
+          />
+        )}
       </Head>
       {children}
     </>

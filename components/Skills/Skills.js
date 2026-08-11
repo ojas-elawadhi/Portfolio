@@ -1,12 +1,82 @@
 /* eslint-disable @next/next/no-img-element */
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { MENULINKS, SKILLS } from "../../constants";
 import { gsap, Linear } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import styles from "./Skills.module.scss";
+
+const SKILL_LABELS = {
+  html: "HTML5",
+  css: "CSS3",
+  javascript: "JavaScript",
+  typescript: "TypeScript",
+  java: "Java",
+  python: "Python",
+  webpack: "Webpack",
+  vite: "Vite",
+  firebase: "Firebase",
+  react: "React",
+  redux: "Redux",
+  nextjs: "Next.js",
+  tailwindcss: "Tailwind CSS",
+  styledcomponents: "styled-components",
+  "chakra-ui": "Chakra UI",
+  "tanstack-query": "TanStack Query",
+  mysql: "MySQL",
+  postgresql: "PostgreSQL",
+  "react-native": "React Native",
+  fastapi: "FastAPI",
+  railway: "Railway",
+};
+
+const SKILL_ASSETS = {
+  "react-native": "react",
+};
+
+const SkillItem = ({ skill, isActive, onToggle, onDismiss }) => {
+  const label = SKILL_LABELS[skill] || skill;
+  const tooltipId = `skill-tooltip-${skill}`;
+
+  return (
+    <span
+      className={`${styles.skillItem} ${
+        isActive ? styles.skillItemActive : ""
+      }`}
+      data-skill-item
+    >
+      <button
+        type="button"
+        className={styles.skillButton}
+        aria-describedby={tooltipId}
+        aria-label={`${label} skill`}
+        onClick={onToggle}
+        onBlur={onDismiss}
+        onKeyDown={(event) => {
+          if (event.key === "Escape") {
+            onDismiss();
+            event.currentTarget.blur();
+          }
+        }}
+      >
+        <Image
+          className={styles.skillIcon}
+          src={`/images/${SKILL_ASSETS[skill] || skill}.svg`}
+          alt={label}
+          width={50}
+          height={50}
+        />
+      </button>
+      <span id={tooltipId} className={styles.tooltip} role="tooltip">
+        {label}
+      </span>
+    </span>
+  );
+};
 
 const Skills = () => {
   const targetSection = useRef(null);
+  const [activeSkill, setActiveSkill] = useState(null);
 
   useEffect(() => {
     const revealTl = gsap.timeline({ defaults: { ease: Linear.easeNone } });
@@ -24,6 +94,36 @@ const Skills = () => {
       scrub: 0,
     });
   }, [targetSection]);
+
+  useEffect(() => {
+    const dismissTooltip = (event) => {
+      if (!event.target.closest("[data-skill-item]")) {
+        setActiveSkill(null);
+      }
+    };
+
+    document.addEventListener("pointerdown", dismissTooltip);
+
+    return () => document.removeEventListener("pointerdown", dismissTooltip);
+  }, []);
+
+  const renderSkill = (skill) => (
+    <SkillItem
+      key={skill}
+      skill={skill}
+      isActive={activeSkill === skill}
+      onToggle={() =>
+        setActiveSkill((currentSkill) =>
+          currentSkill === skill ? null : skill
+        )
+      }
+      onDismiss={() =>
+        setActiveSkill((currentSkill) =>
+          currentSkill === skill ? null : currentSkill
+        )
+      }
+    />
+  );
 
   return (
     <section
@@ -58,15 +158,7 @@ const Skills = () => {
               LANGUAGES AND TOOLS
             </h3>
             <div className="flex flex-wrap gap-6 transform-gpu seq">
-              {SKILLS.languagesAndTools.map((skill) => (
-                <Image
-                  key={skill}
-                  src={`/images/${skill}.svg`}
-                  alt={skill}
-                  width={50}
-                  height={50}
-                />
-              ))}
+              {SKILLS.languagesAndTools.map(renderSkill)}
             </div>
           </div>
           <div className="mt-10">
@@ -74,49 +166,15 @@ const Skills = () => {
               LIBRARIES AND FRAMEWORKS
             </h3>
             <div className="flex flex-wrap gap-6 transform-gpu seq">
-              {SKILLS.librariesAndFrameworks.map((skill) => (
-                <Image
-                  key={skill}
-                  src={`/images/${skill}.svg`}
-                  alt={skill}
-                  width={50}
-                  height={50}
-                />
-              ))}
+              {SKILLS.librariesAndFrameworks.map(renderSkill)}
             </div>
           </div>
-          <div className="flex flex-wrap mt-10">
-            <div className="mr-16 xs:mr-20 mb-6">
-              <h3 className="uppercase tracking-widest text-gray-light-2 font-medium text-base mb-4 seq">
-                {/* DATABASES */}
-              </h3>
-              <div className="flex flex-wrap gap-6 transform-gpu seq">
-                {/* {SKILLS.databases.map((skill) => (
-                  <Image
-                    key={skill}
-                    src={`/skills/${skill}.svg`}
-                    alt={skill}
-                    width={50}
-                    height={50}
-                  />
-                ))} */}
-              </div>
-            </div>
-            <div>
-              <h3 className="uppercase tracking-widest text-gray-light-2 font-medium text-base mb-4 seq">
-                {/* Other */}
-              </h3>
-              <div className="flex flex-wrap gap-6 transform-gpu seq">
-                {/* {SKILLS.other.map((skill) => (
-                  <Image
-                    key={skill}
-                    src={`/skills/${skill}.svg`}
-                    alt={skill}
-                    width={50}
-                    height={50}
-                  />
-                ))} */}
-              </div>
+          <div className="mt-10">
+            <h3 className="uppercase tracking-widest text-gray-light-2 font-medium text-base mb-4 seq">
+              DATABASES
+            </h3>
+            <div className="flex flex-wrap gap-6 transform-gpu seq">
+              {SKILLS.databases.map(renderSkill)}
             </div>
           </div>
         </div>

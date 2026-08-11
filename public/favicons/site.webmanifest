@@ -1,6 +1,9 @@
 {
-  "name": "",
-  "short_name": "",
+  "name": "Ojas Elawadhi | Software Developer",
+  "short_name": "Ojas",
+  "description": "Ojas Elawadhi's software developer portfolio.",
+  "start_url": "/",
+  "scope": "/",
   "icons": [
     {
       "src": "/favicons/android-chrome-192x192.png",
@@ -13,7 +16,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#7000FF",
+  "background_color": "#120E16",
   "display": "standalone"
 }

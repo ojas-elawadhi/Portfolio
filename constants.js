@@ -1,8 +1,8 @@
 export const METADATA = {
   author: "Ojas Elawadhi",
-  title: "Portfolio | Ojas Elawadhi",
+  title: "Ojas Elawadhi | Software Developer",
   description:
-    "Ojas Elawadhi is a Frontend Developer from India, interested in crafting beautiful and functional applications.",
+    "Ojas Elawadhi is a software developer from India building fast, accessible web and mobile products with React, Next.js, React Native, and TypeScript.",
   siteUrl: "https://ojas-elawadhi.vercel.app/",
   twitterHandle: "@Ojas_elawadhi",
   keywords: [
@@ -16,9 +16,15 @@ export const METADATA = {
     "Devfolio",
     "Folio",
   ].join(", "),
-  image:
-    "https://res.cloudinary.com/dhjioxmiq/image/upload/v1701201348/preview_umu5ry.png",
+  image: "https://ojas-elawadhi.vercel.app/preview.png",
+  imageAlt: "Ojas Elawadhi's software developer portfolio",
   language: "English",
+  locale: "en_IN",
+  socialProfiles: [
+    "https://www.linkedin.com/in/ojas-elawadhi/",
+    "https://github.com/ojas-elawadhi",
+    "https://x.com/Ojas_elawadhi",
+  ],
 };
 
 export const MENULINKS = [
@@ -45,7 +51,7 @@ export const MENULINKS = [
 ];
 
 export const TYPED_STRINGS = [
-  "A pragmatic Frontend Developer",
+  "A pragmatic Software Developer",
   "I build things for the web",
   "I create aesthetic and modern apps",
 ];
@@ -82,15 +88,15 @@ export const SKILLS = {
     // "sass",
     // "cpp",
     "java",
-    // "python",
+    "python",
     // "nodejs",
     "webpack",
     "vite",
     "firebase",
+    "railway",
     // "moralis",
     // "stripe",
     // "figma",
-    // "tanstack-query",
   ],
   librariesAndFrameworks: [
     "react",
@@ -100,16 +106,29 @@ export const SKILLS = {
     "styledcomponents",
     // "antdesign",
     "chakra-ui",
+    "tanstack-query",
+    "react-native",
+    "fastapi",
   ],
-  // databases: ["mysql", "mongodb"],
+  databases: ["mysql", "postgresql"],
   // other: ["git", "sanity-io"],
 };
 
 export const PROJECTS = [
   {
+    name: "Number Guess",
+    image: "/projects/NumberGuess.webp",
+    blurImage: "/projects/blur/NumberGuess-blur.webp",
+    description:
+      "Higher-lower number game with solo, AI, online and daily modes",
+    gradient: ["#3730A3", "#7C3AED"],
+    url: "https://play.google.com/store/apps/details?id=com.zenostudios.codewars",
+    tech: ["react-native", "typescript", "nodejs", "postgresql"],
+  },
+  {
     name: "Mockify",
     image: "/projects/MockifyScreen.webp",
-    blurImage: "/projects/blur/airbnb-blur.webp",
+    blurImage: "/projects/blur/MockifyScreen-blur.webp",
     description: "AI Mock Interview with personalized feedback ",
     gradient: ["#006600", "#fff"],
     url: "https://mockify-beta.vercel.app/",
@@ -134,26 +153,25 @@ export const PROJECTS = [
     url: "https://prompt-hub-next.vercel.app/",
     tech: ["typescript", "nextjs", "tailwindcss"],
   },
-  {
-    name: "QR Code Generator",
-    image: "/projects/QrGenerator.webp",
-    blurImage: "/projects/blur/airbnb-blur.webp",
-    description: "Generates downloadable QR-code of any link 📷",
-    gradient: ["#000066", "#6699FF"],
-    url: "https://qrcodegeneratr.netlify.app/",
-    tech: ["react", "html", "css"],
-  },
-  ,
+  // {
+  //   name: "QR Code Generator",
+  //   image: "/projects/QrGenerator.webp",
+  //   blurImage: "/projects/blur/airbnb-blur.webp",
+  //   description: "Generates downloadable QR-code of any link 📷",
+  //   gradient: ["#000066", "#6699FF"],
+  //   url: "https://qrcodegeneratr.netlify.app/",
+  //   tech: ["react", "html", "css"],
+  // },
 ];
 
-export const WORK = [
+const WORK_EXPERIENCES = [
   {
     id: 1,
-    company: " Owl Byte Solutions",
+    company: "Owlbyte Solutions",
     location: "Remote",
     years: [
       {
-        year: "2022",
+        year: "Internship",
         range: "July 2022 - Dec 2023",
         title: "Frontend Developer Intern",
         responsibilities: [
@@ -165,15 +183,16 @@ export const WORK = [
         ],
       },
       {
-        year: "2023",
+        year: "Full-Time",
         range: "Jul 2023 - Present",
-        title: "Frontend Developer",
+        title: "Software Developer",
         responsibilities: [
-          "Built responsive web and mobile apps with React, React Native, Next.js, and TypeScript",
-          "Developed a web extension and mobile app for tweet analysis and token tracking",
-          "Used Redux Toolkit and integrated REST APIs for real-time data",
-          "Designed sleek interfaces with Chakra-UI, TailwindCSS, and Recharts",
-          "Connected wallets and tracked tokens using wagmi and TradingView",
+          "Built web, mobile, and browser-extension products with Next.js, React, React Native, TypeScript, Chakra UI, Redux Toolkit, and TanStack Query.",
+          "Built dashboards with analytics, search/filtering, pagination, watchlists, audience management, and campaign workflows.",
+          "Added AI-powered search, personalization, content analysis, outreach automation, and real-time analytics.",
+          "Integrated third-party APIs, wallet flows, multi-chain rewards, and real-time campaign and reporting pipelines.",
+          "Built an auto-DM campaign system with edit, pause, cancel, re-run, and 7/30-day exclusions, serving thousands of accounts while reducing duplicate sends by ~30%.",
+          "Centralized auth/gating in reusable typed API helpers across 8+ endpoints, reducing duplicate code and regressions with unit tests.",
         ],
       },
     ],
@@ -183,6 +202,7 @@ export const WORK = [
   },
   {
     id: 2,
+    hidden: true,
     company: "Coding Ninjas",
     location: "Remote",
 
@@ -204,6 +224,7 @@ export const WORK = [
   },
   {
     id: 3,
+    hidden: true,
     company: "Real Dev Squad",
     location: "Remote",
     years: [
@@ -223,5 +244,7 @@ export const WORK = [
     video: "/work/spacenos.mp4",
   },
 ];
+
+export const WORK = WORK_EXPERIENCES.filter(({ hidden }) => !hidden);
 
 export const GTAG = "G-5HCTL2TJ5W";

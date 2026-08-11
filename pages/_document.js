@@ -5,8 +5,14 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link rel="manifest" href="/manifest.json" />
-          <link rel="apple-touch-icon" href="/icon.png" />
+          <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/favicons/apple-touch-icon.png"
+          />
+          <link rel="icon" type="image/png" href="/favicons/favicon.png" />
           <meta name="theme-color" content="#7000FF" />
+          <meta name="msapplication-TileColor" content="#7000FF" />
         </Head>
         <body>
           <Main />

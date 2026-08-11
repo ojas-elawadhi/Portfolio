@@ -3,6 +3,17 @@ import Image from "next/image";
 import VanillaTilt from "vanilla-tilt";
 import styles from "./ProjectTile.module.scss";
 
+const TECH_ASSET_PATHS = {
+  "react-native": "/projects/tech/react.svg",
+  nodejs: "/images/nodejs.svg",
+  postgresql: "/images/postgresql.svg",
+  Nextjs: "/projects/tech/nextjs.svg",
+  Gemini: "/projects/tech/gemini.svg",
+};
+
+const getTechAssetPath = (techName) =>
+  TECH_ASSET_PATHS[techName] || `/projects/tech/${techName}.svg`;
+
 const ProjectTile = ({ project, classes, isDesktop }) => {
   const { name, image, blurImage, description, gradient, url, tech } = project;
   const projectCard = useRef(null);
@@ -79,16 +90,18 @@ const ProjectTile = ({ project, classes, isDesktop }) => {
           `}
         >
           <div className="flex flex-col pb-8">
-            {project.tech.map((el, i) => (
-              <img
-                className={`${i % 2 === 0 && "ml-16"} mb-4`}
-                src={`/projects/tech/${el}.svg`}
-                alt={el}
-                height={45}
-                width={45}
-                key={el}
-              />
-            ))}
+            {tech.map((el, i) => {
+              return (
+                <img
+                  className={`${i % 2 === 0 && "ml-16"} mb-4`}
+                  src={getTechAssetPath(el)}
+                  alt={el}
+                  height={45}
+                  width={45}
+                  key={el}
+                />
+              );
+            })}
           </div>
         </div>
         <h2

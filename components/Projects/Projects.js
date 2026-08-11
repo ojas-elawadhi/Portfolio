@@ -18,7 +18,10 @@ const Projects = ({ isDesktop, clientHeight }) => {
       const projectWrapper =
         targetSection.current.querySelector(".project-wrapper");
       projectWrapper.style.width = "calc(100vw - 1rem)";
-      projectWrapper.style.overflowX = "scroll";
+      projectWrapper.style.overflowX = "auto";
+      projectWrapper.style.WebkitOverflowScrolling = "touch";
+      [projectsTimeline, projectsScrollTrigger] =
+        getMobileProjectsSt(projectWrapper);
     }
 
     const [revealTimeline, revealScrollTrigger] = getRevealSt();
@@ -73,6 +76,29 @@ const Projects = ({ isDesktop, clientHeight }) => {
       pin: true,
       animation: timeline,
       pinSpacing: "margin",
+    });
+
+    return [timeline, scrollTrigger];
+  };
+
+  const getMobileProjectsSt = (projectWrapper) => {
+    const getScrollDistance = () =>
+      projectWrapper.scrollWidth - projectWrapper.clientWidth;
+    const timeline = gsap.timeline({ defaults: { ease: Linear.easeNone } });
+
+    timeline.to(projectWrapper, {
+      scrollLeft: getScrollDistance,
+    });
+
+    const scrollTrigger = ScrollTrigger.create({
+      trigger: targetSection.current,
+      start: "top top",
+      end: () => `+=${getScrollDistance()}`,
+      scrub: 0,
+      pin: true,
+      pinSpacing: "margin",
+      invalidateOnRefresh: true,
+      animation: timeline,
     });
 
     return [timeline, scrollTrigger];

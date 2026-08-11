@@ -333,7 +333,7 @@ const Work = ({ clientWidth }) => {
                         );
                       })}
                   </div>
-                  <div className="bg-gray-dark-4 rounded-2xl px-10 py-10 w-80 lg:w-[420px] h-full mx-16">
+                  <div className="bg-gray-dark-4 rounded-2xl px-10 py-10 w-80 lg:w-[560px] h-full mx-16">
                     <p className="font-bold mb-2 text-2xl">
                       {WORK[activeIndex]?.company}
                     </p>

@@ -1,0 +1,220 @@
+.skillItem {
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 3.125rem;
+  width: 3.125rem;
+  height: 3.125rem;
+  overflow: visible;
+  z-index: 0;
+
+  &:hover,
+  &:focus-within,
+  &.skillItemActive {
+    z-index: 10;
+
+    .tooltip {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, 0);
+    }
+
+    .skillIcon {
+      transform: translateY(-0.125rem);
+      filter: drop-shadow(0 0 0.45rem rgba(139, 49, 255, 0.38));
+    }
+  }
+
+  &:first-child {
+    .tooltip {
+      left: 0;
+      transform: translate(0, 0.3rem);
+
+      &::after {
+        left: 1.3rem;
+      }
+    }
+
+    &:hover,
+    &:focus-within,
+    &.skillItemActive {
+      .tooltip {
+        transform: translate(0, 0);
+      }
+    }
+  }
+}
+
+.skillButton {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.125rem;
+  height: 3.125rem;
+  padding: 0;
+  border: 0;
+  border-radius: 0.4rem;
+  background: transparent;
+  color: inherit;
+  line-height: 0;
+  cursor: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -0.3rem;
+    border: 1px solid transparent;
+    border-radius: 0.55rem;
+    box-shadow: 0 0 0 rgba(112, 0, 255, 0);
+    transition: border-color 180ms ease, box-shadow 180ms ease;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible::before {
+    border-color: theme("colors.indigo.light");
+    box-shadow: 0 0 0.65rem rgba(112, 0, 255, 0.58);
+  }
+}
+
+.skillIcon {
+  position: relative;
+  z-index: 1;
+  transition: transform 180ms ease, filter 180ms ease;
+}
+
+.tooltip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 0.75rem);
+  z-index: 20;
+  display: block;
+  max-width: calc(100vw - 2rem);
+  padding: 0.35rem 0.55rem;
+  overflow: hidden;
+  border: 1px solid rgba(159, 85, 255, 0.72);
+  border-radius: 0.4rem;
+  background: theme("colors.gray.dark.2");
+  box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.42),
+    0 0 0.75rem rgba(112, 0, 255, 0.24);
+  color: theme("colors.gray.light.1");
+  font-family: theme("fontFamily.mono");
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  text-overflow: ellipsis;
+  transform: translate(-50%, 0.3rem);
+  transition: opacity 180ms ease, transform 180ms ease, visibility 180ms ease;
+  visibility: hidden;
+  white-space: nowrap;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -0.3rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-right: 1px solid rgba(159, 85, 255, 0.72);
+    border-bottom: 1px solid rgba(159, 85, 255, 0.72);
+    background: theme("colors.gray.dark.2");
+    transform: translateX(-50%) rotate(45deg);
+  }
+}
+
+@media (min-width: 304px) and (max-width: 340px) {
+  .skillItem:nth-child(4n + 1) {
+    .tooltip {
+      left: 0;
+      transform: translate(0, 0.3rem);
+
+      &::after {
+        left: 1.3rem;
+      }
+    }
+
+    &:hover,
+    &:focus-within,
+    &.skillItemActive {
+      .tooltip {
+        transform: translate(0, 0);
+      }
+    }
+  }
+
+  .skillItem:nth-child(4n) {
+    .tooltip {
+      right: 0;
+      left: auto;
+      transform: translate(0, 0.3rem);
+
+      &::after {
+        right: 1.3rem;
+        left: auto;
+      }
+    }
+
+    &:hover,
+    &:focus-within,
+    &.skillItemActive {
+      .tooltip {
+        transform: translate(0, 0);
+      }
+    }
+  }
+}
+
+@media (max-width: 303px) {
+  .skillItem:nth-child(3n + 1) {
+    .tooltip {
+      left: 0;
+      transform: translate(0, 0.3rem);
+
+      &::after {
+        left: 1.3rem;
+      }
+    }
+
+    &:hover,
+    &:focus-within,
+    &.skillItemActive {
+      .tooltip {
+        transform: translate(0, 0);
+      }
+    }
+  }
+
+  .skillItem:nth-child(3n) {
+    .tooltip {
+      right: 0;
+      left: auto;
+      transform: translate(0, 0.3rem);
+
+      &::after {
+        right: 1.3rem;
+        left: auto;
+      }
+    }
+
+    &:hover,
+    &:focus-within,
+    &.skillItemActive {
+      .tooltip {
+        transform: translate(0, 0);
+      }
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skillButton::before,
+  .skillIcon,
+  .tooltip {
+    transition-duration: 0.01ms;
+  }
+}
